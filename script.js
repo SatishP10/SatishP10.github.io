@@ -1,30 +1,38 @@
-document.addEventListener('DOMContentLoaded', () => {
-    function loadPage(page) {
-        fetch(`${page}.html`)
-            .then(response => response.text())
-            .then(data => {
-                const content = document.getElementById('content');
-                content.classList.add('fade-out');
-                setTimeout(() => {
-                    content.innerHTML = data;
-                    content.classList.remove('fade-out');
-                    content.classList.add('fade-in');
-                    setTimeout(() => {
-                        content.classList.remove('fade-in');
-                    }, 1000);
-                }, 1000); // Increased timeout to match the CSS transition duration
-            });
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("a");
 
-    window.addEventListener('hashchange', () => {
-        const hash = window.location.hash.substring(1);
-        loadPage(hash);
+    links.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default link behavior
+
+            // Add the fade-out class to the body
+            document.body.classList.add("fade-out");
+
+            // Wait for the fade-out transition to complete, then navigate
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 750); // Match the duration of the CSS transition
+        });
     });
+});
 
-    // Load initial page
-    if (window.location.hash) {
-        loadPage(window.location.hash.substring(1));
-    } else {
-        window.location.hash = '#about';
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+    accordionHeaders.forEach(header => {
+        header.addEventListener("click", () => {
+            const accordionItem = header.parentElement;
+
+            // Toggle the active class
+            accordionItem.classList.toggle("active");
+
+            // Close other accordion items if you want only one open at a time
+            const otherItems = document.querySelectorAll(".accordion-item");
+            otherItems.forEach(item => {
+                if (item !== accordionItem) {
+                    item.classList.remove("active");
+                }
+            });
+        });
+    });
 });
