@@ -5,6 +5,8 @@ body {
     font-family: 'Arial', sans-serif;
     color: #333;
     background-color: #000; /* Black background for the index page */
+    opacity: 1;
+    transition: opacity 0.75s ease;
 }
 
 
@@ -57,7 +59,7 @@ body {
 }
 
 .image-container img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     border-radius: 10px;
 }
@@ -152,4 +154,50 @@ nav a {
 
 nav a:hover {
     background-color: #FF5349; /* Infrared color */
+}
+
+body.fade-out {
+    opacity:0;
+}
+
+
+.accordion {
+    max-width: auto;
+    margin: auto;
+}
+
+.accordion-item {
+    background-color: black;
+    border: 5px solid black;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    background-color: #333;
+    color: white;
+    padding: 27px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #444;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 15px;
+}
+
+.accordion-content p {
+    margin: 15px 0;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 1500px; /* Adjust based on content */
+    padding: 15px;
 }
