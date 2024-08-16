@@ -1,0 +1,203 @@
+/* Global styles */
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #000; /* Black background for the index page */
+    opacity: 1;
+    transition: opacity 0.75s ease;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+}
+
+.about-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    width: auto;
+    padding: 20px;
+    background-color: #333;
+    margin: 20px;
+    margin-top: -10px;
+}
+
+.projects-container{
+    justify-content: space-between;
+    align-items: left;
+    width: auto;
+    padding: 20px;
+    background-color: #333;
+    margin: 20px;
+    margin-top: -10px;
+}
+
+.contact-container{
+        justify-content: space-between;
+        align-items: left;
+        width: auto;
+        padding: 20px;
+        background-color: #333;
+        margin: 20px;
+        margin-top: -10px;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-container img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.divider {
+    width: 8px;
+    background-color: #FF5349; /* Infrared color */
+    height: 105%; /* Adjust height as needed */
+}
+
+.content {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    color: #fff; /* White text for contrast against black background */
+    margin-bottom: 10px;
+}
+
+.content h2 {
+    font-size: 5em;
+    text-align: center;
+}
+
+.content h3 {
+    font-size: 3em;
+    text-align: center;
+}
+
+h4 {
+    font-size: 20px;
+    text-align: left;
+    color: white;
+}
+
+h5 {
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+
+p {
+    line-height: 1.8;
+    color: white;
+}
+
+
+
+.about-left
+{
+    flex: 1;
+    text-align: left;
+    padding: 10px;
+    background-color: #333;
+    color: #fff; /* White text for contrast against black background */
+   
+}
+
+.projectsBody
+{
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: #333; /* White text for contrast against black background */
+    color: #fff;
+}
+
+.contactBody
+{
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    color: #000;
+    background-color: #333 /* White text for contrast against black background */
+}
+
+.highlight {
+    color: #FF5349; /* Infrared color */
+}
+
+nav {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #333;
+    padding: 20px 50px;
+    text-decoration: none;
+    font-size: 30px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #FF5349; /* Infrared color */
+}
+
+body.fade-out {
+    opacity:0;
+}
+
+
+.accordion {
+    max-width: auto;
+    margin: auto;
+}
+
+.accordion-item {
+    background-color: black;
+    border: 5px solid black;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    background-color: #333;
+    color: white;
+    padding: 27px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #444;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 15px;
+}
+
+.accordion-content p {
+    margin: 15px 0;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 1500px; /* Adjust based on content */
+    padding: 15px;
+}
